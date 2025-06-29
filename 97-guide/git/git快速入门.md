@@ -40,6 +40,16 @@ git commit -m "a new commit msg" --amend # 如果你刚才的提交msg写错了�
 ```
 ![](git快速入门3.png)
 
+### 提交示例
+``` bash
+git status          # 查看文件状态
+git add app.js      # 暂存 app.js 文件
+git commit -m "修复了app.js中的bug"  # 提交并添加说明
+git push origin main  # 推送到远程仓库的main分支
+```
+![image](https://github.com/user-attachments/assets/5c064349-b1bc-49fc-b449-92bae83a2ccc)
+
+
 ### 生成分支和检出分支
 ```bash
 git branch test1 # create a branch named test1 based on the current branch
