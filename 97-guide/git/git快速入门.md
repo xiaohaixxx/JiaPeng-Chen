@@ -96,44 +96,82 @@ git merge test4
 #### 总结
 rebase 是一枝独秀，merge是各种汇聚。推荐使用rebase的原因是从提交记录来看，单线的提交看起来更容易分析，如果merge过多，那么看起来的提交记录会变得混乱。
 
+
 ### 远程仓库建立
 - remote
 ```bash
 git remote -v # 查看远程仓库等信息
-git remote add origin https://gitlab.com/etherlab.org/ethercat.git # 如果本地原来没有远程仓库追踪，可以使用该指令添加远程仓库追踪。其中，https://gitlab.com/etherlab.org/ethercat.git这个地址从github仓库的连接里拷贝（下图红圈处）
+git remote add origin https://gitlab.com/etherlab.org/ethercat.git # 如果本地原来没有远程仓库追踪，可以使用该指令添加远程仓库追踪。
+```
+其中，https://gitlab.com/etherlab.org/ethercat.git 这个地址从github仓库的连接里拷贝（下图红圈处）
+
 ![image](https://github.com/user-attachments/assets/a28e612d-1303-4245-b9bf-86a196f477d6)
+
 当远程仓库被添加后，再次输入
+```bash
 git remote -v # 查看远程仓库等信息
+```
 会显示远程仓库：
+
 ![image](https://github.com/user-attachments/assets/b3f75830-5c75-4581-b75e-d3172430819f)
+
 
 ### 首次推送远程仓库
 当首次使用 git push 推送代码去远程仓库，会显示：
+
 ![image](https://github.com/user-attachments/assets/f5a9d97c-296a-408b-90f0-aceb46c78a12)
 按照上面的提示要求输入：
+```bash
  git push --set-upstream origin 分支名称
+```
 即可完成代码的首次上传
 
 ### 通过SSH免密登录
 在git命令行中输入
+```bash
 ssh-keygen
+```
 生成密匙对
-输入cd进入master文件夹
-再输入 ls. ssh/
+输入
+```bash
+cd
+```
+进入master文件夹
+再输入
+```bash
+ls. ssh/
+```
 显示所生产的密匙对
+
 ![image](https://github.com/user-attachments/assets/d0103965-445f-475e-a0d1-2664cc6f3daf)
-输入cat.ssh/密匙名可以查看密匙文件
+
+输入
+```bash
+cat.ssh/密匙名
+```
+可以查看密匙文件
+
 ![image](https://github.com/user-attachments/assets/3195016b-71dc-4a65-bb21-408f11fac3f6)
 输入
+```bash
 cd -
+```
 返回上一次的根目录，
 输入
+```bash
 $ git remote set-url origin SSH地址
+```
 其中，SSH地址从github网页中获取
 ![image](https://github.com/user-attachments/assets/a6863edf-c503-4f78-a8f4-53512cab091e)
-输入 git remote 查看远程仓库情况
+输入
+```bash
+git remote
+```
+查看远程仓库情况
+
 
 ### 改写当前的追踪仓库
+```bash
 git remote --set-url origin https://gitlab.com/etherlab.org/ethercat.git # 如果远程仓库的链接已经存在，那么这个指令就是改写当前的追踪仓库
 ```
 - push
