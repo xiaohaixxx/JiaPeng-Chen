@@ -131,15 +131,15 @@ git remote -v # 查看远程仓库等信息
 ```bash
 ssh-keygen
 ```
-生成密匙对
+生成密匙对。
 输入
 ```bash
 cd
 ```
-进入master文件夹
+进入master文件夹。
 再输入
 ```bash
-ls. ssh/
+ls .ssh/
 ```
 显示所生产的密匙对
 
@@ -171,6 +171,20 @@ git remote
 
 
 ### 改写当前的追踪仓库
+删除当前仓库
+```bash
+git remote remove origin
+```
+检查当前仓库是否删除：
+```bash
+git remote -v
+```
+然后再重新添加仓库
+```bash
+git remote add origin 新仓库地址
+```
+
+其他内容：
 ```bash
 git remote --set-url origin https://gitlab.com/etherlab.org/ethercat.git # 如果远程仓库的链接已经存在，那么这个指令就是改写当前的追踪仓库
 ```
