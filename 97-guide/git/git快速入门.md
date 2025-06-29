@@ -169,6 +169,23 @@ git remote
 ```
 查看远程仓库情况
 
+将公钥添加到 GitHub 账户
+复制公钥内容到剪贴板：
+```bash
+cat ~/.ssh/id_ed25519.pub | clip
+```
+然后：
+登录 GitHub → 点击右上角头像 → Settings → SSH and GPG keys。
+点击 New SSH key，粘贴刚才复制的公钥内容，添加标题（如 “Work Laptop”）。
+测试 SSH 连接
+验证是否能成功连接 GitHub：
+```bash
+ssh -T git@github.com
+```
+可能会提示确认指纹，输入 yes
+成功后会看到类似：Hi username! You've successfully authenticated...
+
+
 
 ### 改写当前的追踪仓库
 删除当前仓库
